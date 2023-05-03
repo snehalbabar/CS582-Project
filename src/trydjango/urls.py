@@ -26,7 +26,7 @@ urlpatterns = [
     path("contact/", contact_view, name='contact'),
     path("product/", product_detail_view),
     path("create/", product_create_view),
-    path("lookup/<int:my_id>", dymanic_lookup_view),
+    path("lookup/<int:my_id>", dymanic_lookup_view,name='product_lookup'),
     path("delete/<int:my_id>", product_delete_view),
-    path("list/", product_list_view),
+    path("list/", product_list_view,name='product_list'),
 ]
