@@ -11,5 +11,5 @@ def contact_view(request, *args, **kwargs):
           "my_text" :"this is contact page",
           "my_number" : 123,
           "my_list" :[123,233,456,332]
-     }
+     } 
      return render(request,"contact.html",my_context)
