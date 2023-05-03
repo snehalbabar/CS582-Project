@@ -8,7 +8,4 @@ class product(models.Model):
     summry = models.TextField()
     featured = models.BooleanField(default=False )
 
-    def get_absolute_url(self):
-        #return f"/product/{self.id}"
-        return reverse("products: product_list", kwargs={"id":self.id})
  
