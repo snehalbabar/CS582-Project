@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from pages.views import home_view,contact_view
-from products.views import product_detail_view, product_create_view,dymanic_lookup_view,product_delete_view
+from products.views import product_detail_view, product_create_view,dymanic_lookup_view,product_delete_view,product_list_view
 
 
 urlpatterns = [
@@ -28,4 +28,5 @@ urlpatterns = [
     path("create/", product_create_view),
     path("lookup/<int:my_id>", dymanic_lookup_view),
     path("delete/<int:my_id>", product_delete_view),
+    path("list/", product_list_view),
 ]
