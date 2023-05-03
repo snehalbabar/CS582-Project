@@ -8,8 +8,9 @@ def home_view(request, *args, **kwargs):
 
 def contact_view(request, *args, **kwargs):
      my_context= {
-          "my_text" :"this is contact page",
+          "title" :"this is contact page",
           "my_number" : 123,
-          "my_list" :[123,233,456,332,1112,"abc"]
+          "my_list" :[123,233,456,332,1112,"abc"],
+          "my_html" : "<h1>render html</h1>"
      } 
      return render(request,"contact.html",my_context)

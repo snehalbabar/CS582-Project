@@ -2,8 +2,10 @@
 
 {% block content %}
     <h1>contact page </h1>
+    <h3>{{title|capfirst|upper}}</h3>
+    {{my_html |safe}}
     <p>
-        {{ my_text}},{{my_number}}, {{my_list}}
+        {{ title }},{{my_number}}, {{my_list}}
     </p>
     <ul>
         {% for my_subitem in my_list %}
