@@ -7,9 +7,18 @@
     </p>
     <ul>
         {% for my_subitem in my_list %}
+        {% if my_subitem == 123%}
         <li>
-             {{forloop.counter}}-{{my_subitem }}
+            {{forloop.counter}}-{{my_subitem | add:22}}
+       </li>
+       {% elif my_subitem == "abc" %}
+       <li>This is string value</li>
+       {% else %}
+       <li>
+        {{forloop.counter}}-{{my_subitem }}
         </li>
+        {% endif %} 
+       
         {% endfor %}
     </ul>
    
