@@ -6,4 +6,4 @@ class product(models.Model):
     decs   = models.TextField(blank=True, null=True)
     price  = models.DecimalField(decimal_places=2,max_digits=200)
     summry = models.TextField()
-    featured = models.BooleanField( )
+    featured = models.BooleanField(default=False )
