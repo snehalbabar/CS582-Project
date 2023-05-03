@@ -1,7 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render,get_object_or_404
 from .forms import ProductForm, RawProductForm
 from .models import product
-
+from django.http import Http404
 # Create your views here.
 
 def product_create_view(request):
@@ -56,12 +56,12 @@ def product_detail_view(request):
     return render(request,"product/detail.html", context)
 
 def dymanic_lookup_view(request,my_id):
-    obj = product.objects.get(id=my_id)
-    # context = {
-    #     "title" :obj.title,
-    #     "desc" : obj.decs,
-    #     "price" :  obj.price        
-    # }
+    #obj = product.objects.get(id=my_id)
+    #obj = get_object_or_404(product,id=my_id)
+    try:
+        obj = product.objects.get(id=my_id)
+    except product.DoesNotExist:
+        raise Http404
     context = {
         'object' : obj
     }
