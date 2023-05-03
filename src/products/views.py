@@ -67,3 +67,15 @@ def dymanic_lookup_view(request,my_id):
     }
     return render(request,"product/detail.html", context)
 
+
+def product_delete_view(request,my_id):
+    obj = get_object_or_404(product,id=my_id)
+    #Post Request
+    if request.method == "POST":
+        #comfirm delete
+        obj.delete()
+    context = {
+        'object' : obj
+    }
+    return render(request,"product/delete.html", context)
+
